@@ -77,6 +77,6 @@ class OpenAIVisionAPI:
             calories, fats, proteins, carbs = macros_found[0]
         else:
             print("Count:", count, "Calling again, AI output was", answer)
-            self.query_vision_model(image, notes, count=count+1)
+            return self.query_vision_model(image, notes, count=count+1)
             calories, fats, proteins, carbs = -1, -1, -1, -1
         return calories, fats, proteins, carbs
