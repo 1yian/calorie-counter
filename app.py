@@ -17,9 +17,9 @@ def main():
         if image_file is not None and text_query:
             image = Image.open(image_file)
             try:
-                result = vision_api.query_vision_model(image, text_query)
+                cals, fats, proteins, carbs = vision_api.query_vision_model(image, text_query)
                 st.success("Response from GPT-4 Vision:")
-                st.write(result)
+                st.write(f"Calories: {cals}\nFats: {fats}\nProteins: {proteins}\n Carbohydrates: {carbs}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
         else:
