@@ -8,14 +8,14 @@ DEFAULT_PROMPT = "This is a picture of a meal. To the best of your ability, come
 "likelihood estimate of the macro and calorie count of this meal based on how " + \
 "it looks alone. When you come up with your estimate, call the estimate " + \
 "function by saying 'estimate(x, p, f, c)' where x is your best guess of " + \
-"the calories, p is protein, f is fats, and c is carbs."
+"the calories, p is protein, f is fats, and c is carbs. For example, estimate(10, 1, 3, 4)"
 
 DEFAULT_PROMPT_NOTES = "This is a picture of a meal. To the best of your ability, come up with a maximum " + \
 "likelihood estimate of the macro and calorie count of this meal based on how " + \
 "it looks alone. Here are some notes about the meal: [NOTES]." + \
 "When you come up with your estimate, call the estimate " + \
 "function by saying 'estimate(x, p, f, c)' where x is your best guess of " + \
-"the calories, p is protein, f is fats, and c is carbs."
+"the calories, p is protein, f is fats, and c is carbs. For example, estimate(10, 1, 3, 4)"
 
 class OpenAIVisionAPI:
     def __init__(self, api_key):
