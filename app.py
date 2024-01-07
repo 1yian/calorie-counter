@@ -12,7 +12,7 @@ def main():
     vision_api = OpenAIVisionAPI(api_key)
 
 
-    upload_image_option = st.radio("Choose an option", ("Upload Image", "Take a Picture"))
+    upload_image_option = st.radio("Choose an option", ("Take a Picture", "Upload Image",))
 
     if upload_image_option == "Upload Image":
         image_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png"])
@@ -44,7 +44,7 @@ def main():
                 picture_bytes = picture.read()
                 image = Image.open(io.BytesIO(picture_bytes))
                 try:
-                    cals, protein, fats, carbs = vision_api.query_vision_model(image, text_query)
+                    cals, proteins, fats, carbs = vision_api.query_vision_model(image, text_query)
                     st.markdown("""
                         **Nutritional Information:**
                         - Calories: {:.2f}
